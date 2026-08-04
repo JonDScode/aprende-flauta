@@ -60,12 +60,12 @@ export default function Home({ onStart, onExplore, onRepertoire }: Props) {
         <h3>¿Cómo funciona?</h3>
         <ol>
           <li>
-            <strong>Notas</strong> — explora el mapa de digitaciones de tu instrumento: cada
-            tarjeta muestra dónde vive la nota en el pentagrama y qué dedos van dónde.
-          </li>
-          <li>
             <strong>Primeros pasos</strong> — el curso: qué es el pentagrama, cómo se leen las
             figuras rítmicas, y el método para pasar de la tablatura a leer partitura sola.
+          </li>
+          <li>
+            <strong>Notas</strong> — explora el mapa de digitaciones de tu instrumento: cada
+            tarjeta muestra dónde vive la nota en el pentagrama y qué dedos van dónde.
           </li>
           <li>
             <strong>Repertorio</strong> — practica con canciones reales, del nivel 1 (tres notas)

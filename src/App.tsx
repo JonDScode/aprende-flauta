@@ -43,16 +43,16 @@ export default function App() {
             Inicio
           </button>
           <button
-            className={page === 'explorer' ? 'active' : ''}
-            onClick={() => { setPage('explorer'); setSong(null); }}
-          >
-            Notas
-          </button>
-          <button
             className={page === 'course' ? 'active' : ''}
             onClick={() => { setPage('course'); setSong(null); }}
           >
             Primeros pasos
+          </button>
+          <button
+            className={page === 'explorer' ? 'active' : ''}
+            onClick={() => { setPage('explorer'); setSong(null); }}
+          >
+            Notas
           </button>
           <button
             className={page === 'songs' ? 'active' : ''}
@@ -61,18 +61,20 @@ export default function App() {
             Repertorio
           </button>
         </nav>
-        <select
-          className="instrument-select"
-          value={choice.id}
-          onChange={(e) => setChoiceId(e.target.value)}
-          aria-label="Instrumento"
-        >
-          {INSTRUMENT_CHOICES.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
-          ))}
-        </select>
+        {(page === 'explorer' || page === 'songs') && (
+          <select
+            className="instrument-select"
+            value={choice.id}
+            onChange={(e) => setChoiceId(e.target.value)}
+            aria-label="Instrumento"
+          >
+            {INSTRUMENT_CHOICES.map((c) => (
+              <option key={c.id} value={c.id}>
+                {c.name}
+              </option>
+            ))}
+          </select>
+        )}
       </header>
 
       <main className="app-main">
