@@ -12,5 +12,6 @@ esta app. No se requiere atribución, pero se documenta la fuente por transparen
   Japan Maritime Self-Defense Force Band en Yokosuka · Obra oficial del gobierno de
   EE. UU., dominio público · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:US_Navy_111203-N-CZ945-067_Sailor_plays_flute_alongside_musicians_of_the_Japan_Maritime_Self-Defense_Force_Band_Yokosuka.jpg)
 
-El diagrama de embocadura (fife/traversa) es un SVG propio del proyecto, no una imagen
-de terceros.
+- **embouchure-fife.jpg** y **embouchure-traversa.jpg** — ilustraciones generadas con IA
+  por el operador del proyecto específicamente para esta app (sin derechos de autor de
+  terceros), recortadas de una lámina comparativa única.

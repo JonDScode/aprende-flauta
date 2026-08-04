@@ -1,8 +1,9 @@
-import EmbouchureDiagram from './EmbouchureDiagram';
+const BASE = import.meta.env.BASE_URL;
 
 interface EmbouchureInfo {
   title: string;
-  showDiagram?: boolean;
+  image?: string;
+  imageAlt?: string;
   paragraphs: string[];
 }
 
@@ -16,7 +17,8 @@ const INFO: Record<string, EmbouchureInfo> = {
   },
   fife: {
     title: 'Embocadura — fife',
-    showDiagram: true,
+    image: 'images/embouchure-fife.jpg',
+    imageAlt: 'Ilustración de la embocadura del fife: el labio inferior apoyado sobre el orificio, cubriendo aproximadamente un tercio',
     paragraphs: [
       'El fife se sostiene de lado, como la traversa: el agujero de embocadura queda justo debajo del labio inferior, con la cabeza del instrumento apoyada contra la barbilla.',
       'Tensa ligeramente las comisuras de los labios para formar una abertura pequeña y centrada, y dirige un chorro de aire fino hacia el borde exterior del agujero — no hacia adentro. Cubre con el labio inferior cerca de un tercio del agujero.',
@@ -25,7 +27,8 @@ const INFO: Record<string, EmbouchureInfo> = {
   },
   flute: {
     title: 'Embocadura — flauta traversa',
-    showDiagram: true,
+    image: 'images/embouchure-traversa.jpg',
+    imageAlt: 'Ilustración de la embocadura de la flauta traversa moderna: la placa de labio, la chimenea y el labio inferior cubriendo aproximadamente un cuarto del agujero',
     paragraphs: [
       'Apoya la placa de embocadura contra el mentón, justo debajo del labio inferior, con el agujero centrado respecto a la boca. Gira (o "enrolla") la flauta hacia adentro o afuera hasta que cubra aproximadamente un tercio del agujero con el labio inferior.',
       'Forma una abertura pequeña y plana entre los labios — como al decir "pu" o silbar suave — y dirige el aire en un chorro fino hacia el borde exterior del agujero, donde el aire se divide y hace vibrar la columna de aire dentro del tubo.',
@@ -42,7 +45,7 @@ export default function Embouchure({ instrumentId }: { instrumentId: string }) {
     <div className="embouchure-card">
       <h3>{info.title}</h3>
       <div className="embouchure-body">
-        {info.showDiagram && <EmbouchureDiagram />}
+        {info.image && <img className="embouchure-image" src={`${BASE}${info.image}`} alt={info.imageAlt} loading="lazy" />}
         <div className="embouchure-text">
           {info.paragraphs.map((p, i) => (
             <p key={i}>{p}</p>

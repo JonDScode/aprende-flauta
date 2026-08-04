@@ -616,65 +616,18 @@ svg g.note-active .tab-thumb-ring {
 
 .embouchure-body {
   display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  gap: 1.2rem;
+  align-items: flex-start;
 }
 
-.embouchure-diagram {
-  width: 100%;
-  max-width: 460px;
-  align-self: center;
-  background: var(--accent-soft);
+.embouchure-image {
+  width: 34%;
+  max-width: 210px;
+  flex-shrink: 0;
   border-radius: 10px;
   border: 1px solid var(--border);
-  padding: 0.5rem 0.7rem;
-}
-
-.emb-tube-group {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 2;
-}
-
-.emb-tube-cap {
-  fill: var(--accent-soft);
-}
-
-.emb-face {
-  fill: var(--accent-soft);
-  stroke: var(--ink);
-  stroke-width: 2.4;
-  stroke-linejoin: round;
-}
-
-.emb-caption {
-  font-size: 9px;
-  fill: var(--muted);
-}
-
-.emb-face-outline {
-  fill: var(--card);
-  stroke: var(--ink);
-  stroke-width: 1.4;
-}
-
-.emb-hole-top {
-  fill: var(--accent-soft);
-  stroke: var(--ink);
-  stroke-width: 1.2;
-  stroke-dasharray: 2.5 2;
-}
-
-.emb-lip-line {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-}
-
-.emb-legend text {
-  font-size: 9px;
-  fill: var(--ink);
+  /* la ilustración es una imagen alta (vista + corte técnico apilados) */
+  align-self: flex-start;
 }
 
 .embouchure-text p {
@@ -685,6 +638,18 @@ svg g.note-active .tab-thumb-ring {
 
 .embouchure-text p:last-child {
   margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .embouchure-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .embouchure-image {
+    width: 60%;
+    max-width: 260px;
+  }
 }
 
 
