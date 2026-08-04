@@ -118,7 +118,6 @@ export default function SheetMusic({ abc, instrument, variant }: Props) {
               variant={variant}
               midi={currentMidi}
               scale={3}
-              showLabels={instrument.id === 'flute'}
               showName
             />
           ) : (

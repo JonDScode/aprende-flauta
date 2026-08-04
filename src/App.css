@@ -373,8 +373,11 @@ svg g.note-active .tab-thumb-ring {
 
 /* SVG responsivo: el width/height inline es el tamaño natural, pero nunca
    desborda su contenedor (p. ej. la traversa con etiquetas en el panel
-   lateral de 190px) — se encoge manteniendo el aspecto, nunca se agranda */
-.fingering-diagram svg {
+   lateral de 190px) — se encoge manteniendo el aspecto, nunca se agranda.
+   Solo el SVG del diagrama de dedos (hijo directo): el pentagrama de
+   MiniStaff va anidado más adentro y NO tiene viewBox, así que "height:auto"
+   le rompe el tamaño (por eso se recortaba la clave y las notas agudas). */
+.fingering-diagram > svg {
   max-width: 100%;
   height: auto;
 }
@@ -594,4 +597,215 @@ svg g.note-active .tab-thumb-ring {
   font-weight: 600;
   padding: 0.05rem 0.4rem;
   margin-bottom: 0.2rem;
+}
+
+/* ---------- embocadura ---------- */
+.embouchure-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.4rem 1.2rem;
+  margin: 0 auto 1.2rem;
+  max-width: 720px;
+}
+
+.embouchure-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+}
+
+.embouchure-body {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.embouchure-diagram {
+  width: 44%;
+  max-width: 250px;
+  flex-shrink: 0;
+  background: var(--accent-soft);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  padding: 0.4rem;
+}
+
+.emb-tube {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.emb-wall {
+  fill: var(--ink);
+}
+
+.emb-hole {
+  fill: var(--accent-soft);
+  stroke: var(--accent-soft);
+}
+
+.emb-lip {
+  fill: var(--muted);
+  opacity: 0.55;
+}
+
+.emb-air-main {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+}
+
+.emb-air-split {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.4;
+  stroke-dasharray: 3 2;
+}
+
+.emb-wave {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.2;
+  opacity: 0.6;
+}
+
+.emb-arrowhead {
+  fill: var(--accent);
+}
+
+.emb-label {
+  font-size: 8px;
+  fill: var(--muted);
+}
+
+.embouchure-text p {
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.embouchure-text p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 560px) {
+  .embouchure-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .embouchure-diagram {
+    width: 80%;
+  }
+}
+
+/* ---------- home ---------- */
+.home {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.home-hero {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.home-hero h2 {
+  font-size: 1.7rem;
+  margin: 0 0 0.8rem;
+}
+
+.home-hero p {
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.home-cta {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.4rem;
+}
+
+.home-cta-primary,
+.home-cta-secondary {
+  border-radius: 999px;
+  padding: 0.6rem 1.3rem;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+}
+
+.home-cta-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.home-cta-secondary {
+  background: var(--card);
+  color: var(--accent);
+}
+
+.home-instruments {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 2.2rem;
+}
+
+.home-instrument-card {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.home-instrument-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  background: var(--accent-soft);
+}
+
+.home-instrument-card figcaption {
+  padding: 0.8rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.home-instrument-card figcaption span {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.home-how {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.2rem 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-how h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.home-how ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.home-how li {
+  line-height: 1.5;
 }

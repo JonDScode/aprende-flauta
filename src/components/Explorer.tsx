@@ -4,6 +4,7 @@ import type { Fingering } from '../types';
 import { midiToFreq } from '../types';
 import FingeringDiagram from './FingeringDiagram';
 import AnatomyCard from './AnatomyCard';
+import Embouchure from './Embouchure';
 
 const OCTAVE_NAMES = ['Primera octava', 'Segunda octava', 'Tercera octava', 'Cuarta octava'];
 
@@ -47,6 +48,7 @@ export default function Explorer({ choice }: { choice: InstrumentChoice }) {
         Pulsa una tarjeta para escuchar el tono de referencia. ● tapado · ○ abierto · ◐ medio
         agujero. La raya separa la mano izquierda de la derecha.
       </p>
+      <Embouchure instrumentId={instrument.id} />
       <AnatomyCard choice={choice} />
       {sortedOctaves.map(([oct, fs], i) => (
         <section key={oct}>

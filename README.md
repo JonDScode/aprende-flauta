@@ -31,8 +31,10 @@ npm run build    # build estática en dist/
 
 - ✅ F0 esqueleto · F1 MVP · F2 fife verificada contra el chart oficial · F3 repertorio (15 canciones, niveles 1–6)
 - ✅ Curso (pentagrama + figuras), explorador por octavas con mini-pentagrama, esquema anatómico bilingüe
+- ✅ Página de inicio (Home) con fotos de dominio público de los 3 instrumentos ([créditos](public/images/CREDITS.md))
+- ✅ Explicación de embocadura por instrumento (fife/traversa: diagrama SVG propio del corte del mecanismo de bisel)
 - ✅ Progreso persistido (canciones aprendidas por nivel, en localStorage)
-- ✅ **PWA**: instalable y 100% offline (`vite-plugin-pwa`); los soundfonts del CDN se cachean en runtime
+- ✅ **PWA**: instalable y 100% offline (`vite-plugin-pwa`), con recarga forzada cuando hay versión nueva; los soundfonts del CDN se cachean en runtime
 - ⏳ Repertorio hacia ~50 canciones · rediseño a fondo de la traversa · F4 feedback por micrófono (pitchy)
 
 ### PWA / instalación

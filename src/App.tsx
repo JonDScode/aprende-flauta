@@ -8,15 +8,16 @@ import SheetMusic from './components/SheetMusic';
 import Explorer from './components/Explorer';
 import Course from './components/Course';
 import FingeringDiagram from './components/FingeringDiagram';
+import Home from './components/Home';
 import { useProgress } from './lib/progress';
 
-type Page = 'songs' | 'course' | 'explorer';
+type Page = 'home' | 'songs' | 'course' | 'explorer';
 
 export default function App() {
   const [choiceId, setChoiceId] = useState<string>(
     () => localStorage.getItem('flute-instrument') ?? 'recorder-baroque',
   );
-  const [page, setPage] = useState<Page>('songs');
+  const [page, setPage] = useState<Page>('home');
   const [song, setSong] = useState<Song | null>(null);
   const progress = useProgress();
 
@@ -30,11 +31,17 @@ export default function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1 onClick={() => { setSong(null); setPage('songs'); }}>
+        <h1 onClick={() => { setSong(null); setPage('home'); }}>
           <img src={`${import.meta.env.BASE_URL}logo-mark.png`} alt="Aprende Flauta" className="app-logo-img" />
           Aprende Flauta
         </h1>
         <nav className="app-nav">
+          <button
+            className={page === 'home' ? 'active' : ''}
+            onClick={() => { setPage('home'); setSong(null); }}
+          >
+            Inicio
+          </button>
           <button
             className={page === 'explorer' ? 'active' : ''}
             onClick={() => { setPage('explorer'); setSong(null); }}
@@ -69,7 +76,13 @@ export default function App() {
       </header>
 
       <main className="app-main">
-        {page === 'explorer' ? (
+        {page === 'home' ? (
+          <Home
+            onStart={() => setPage('course')}
+            onExplore={() => setPage('explorer')}
+            onRepertoire={() => setPage('songs')}
+          />
+        ) : page === 'explorer' ? (
           <Explorer choice={choice} />
         ) : page === 'course' ? (
           <Course />
