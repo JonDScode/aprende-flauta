@@ -1,4 +1,6 @@
-# 🎶 Aprende Flauta
+# Aprende Flauta
+
+🔗 **[jondscode.github.io/aprende-flauta](https://jondscode.github.io/aprende-flauta/)**
 
 App web para aprender **flauta dulce soprano** (digitación barroca o alemana), **fife Yamaha YRF-21** y **flauta traversa** (sistema Boehm), con repertorio de dominio público graduado por dificultad.
 
@@ -38,3 +40,10 @@ npm run build    # build estática en dist/
 `npm run build` genera `dist/` con `manifest.webmanifest` y `sw.js`. Sírvelo por HTTPS (o `localhost`)
 para que el service worker registre y la app sea instalable ("Añadir a pantalla de inicio"). El primer
 uso online cachea todo (app + canciones + soundfonts); a partir de ahí funciona sin conexión.
+
+### Despliegue en GitHub Pages
+
+El workflow `.github/workflows/deploy.yml` construye y publica automáticamente en cada push a `main`.
+Como Pages sirve el sitio bajo `/<repo>/`, el build pasa `BASE_PATH=/<repo>/` (`vite.config.ts` lo lee
+vía `process.env.BASE_PATH`) y el manifest usa rutas relativas (`start_url: '.'`) para funcionar igual
+en local y bajo el subpath. Para desplegar a mano: `BASE_PATH=/aprende-flauta/ npm run build` y sube `dist/`.
