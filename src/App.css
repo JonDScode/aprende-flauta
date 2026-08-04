@@ -368,6 +368,15 @@ svg g.note-active .tab-thumb-ring {
   flex-direction: column;
   align-items: center;
   gap: 0.3rem;
+  max-width: 100%;
+}
+
+/* SVG responsivo: el width/height inline es el tamaño natural, pero nunca
+   desborda su contenedor (p. ej. la traversa con etiquetas en el panel
+   lateral de 190px) — se encoge manteniendo el aspecto, nunca se agranda */
+.fingering-diagram svg {
+  max-width: 100%;
+  height: auto;
 }
 
 /* dentro de las tarjetas del explorador, el consejo empuja hacia abajo sin
