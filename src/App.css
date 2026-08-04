@@ -1,0 +1,588 @@
+.app {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+/* ---------- header ---------- */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--border);
+}
+
+.app-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+/* isologo (imagen original del operador, recortada al emblema) */
+.app-logo-img {
+  height: 44px;
+  width: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.app-nav {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.app-nav button {
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+}
+
+.app-nav button.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.instrument-select {
+  margin-left: auto;
+  font: inherit;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--card);
+}
+
+.app-main {
+  padding-top: 1.2rem;
+}
+
+.app-footer {
+  margin-top: 2rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ---------- lista de canciones ---------- */
+.level-section {
+  margin-bottom: 1.8rem;
+}
+
+.level-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.7rem;
+}
+
+.level-header h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.level-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.level-badge {
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.35rem 0.6rem;
+  white-space: nowrap;
+}
+
+.level-progress {
+  margin-left: auto;
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.level-songs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.7rem;
+}
+
+.song-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.15s;
+}
+
+.song-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.song-card--done {
+  border-color: #5a9e5a;
+  background: #f2f8f2;
+}
+
+.song-card-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.8rem 0.8rem 0.5rem;
+  width: 100%;
+}
+
+.song-check {
+  border: none;
+  border-top: 1px solid var(--border);
+  background: none;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.45rem 0.8rem;
+  text-align: left;
+}
+
+.song-check:hover {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.song-check--done,
+.song-card--done .song-check {
+  color: #3d7a3d;
+}
+
+.song-view-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.song-view-head .song-check {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  white-space: nowrap;
+}
+
+.song-view-head .song-check--done {
+  border-color: #5a9e5a;
+  background: #f2f8f2;
+}
+
+.song-title {
+  font-weight: 600;
+}
+
+.song-subtitle {
+  font-size: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.song-origin {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.song-notes {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  margin-top: 0.3rem;
+}
+
+.note-chip {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+}
+
+/* ---------- vista de canción ---------- */
+.back-button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 0;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.song-view h2 {
+  margin: 0.2rem 0 0;
+}
+
+.song-view-subtitle {
+  margin: 0.1rem 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.sheet-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0.5rem 0;
+}
+
+.tab-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.sheet-layout {
+  display: grid;
+  grid-template-columns: 1fr 190px;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 760px) {
+  .sheet-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sheet-paper {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem;
+}
+
+.current-fingering {
+  position: sticky;
+  top: 1rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 220px;
+  justify-content: center;
+}
+
+.current-placeholder {
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.sheet-controls {
+  margin-top: 0.8rem;
+}
+
+/* ---------- flauto-tab (dentro del SVG de abcjs y en diagramas React) ---------- */
+.tab-hole {
+  stroke: var(--ink);
+  stroke-width: 1.1;
+}
+
+.tab-c {
+  fill: var(--ink);
+}
+
+.tab-o {
+  fill: #fff;
+}
+
+.tab-h {
+  fill: #fff;
+}
+
+.tab-half {
+  fill: var(--ink);
+}
+
+.tab-thumb-ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 0.7;
+  stroke-dasharray: 2 1.5;
+}
+
+/* agujero doble: círculo contenedor (la yema de un solo dedo) */
+.tab-outer {
+  fill: #fff;
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+
+/* raya separadora entre mano izquierda y derecha */
+.tab-hand-sep {
+  fill: var(--ink);
+}
+
+.tab-label {
+  font-size: 5px;
+  fill: var(--muted);
+}
+
+.tab-missing {
+  font-size: 14px;
+  fill: var(--active);
+  font-weight: bold;
+}
+
+/* nota activa durante la reproducción: cabeza de nota y su columna de tab */
+.note-active,
+svg .note-active path,
+svg g.note-active .tab-c,
+svg g.note-active .tab-half {
+  fill: var(--active) !important;
+}
+
+svg g.note-active .tab-hole,
+svg g.note-active .tab-outer,
+svg g.note-active .tab-thumb-ring {
+  stroke: var(--active) !important;
+}
+
+/* ---------- diagrama React ---------- */
+.fingering-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* dentro de las tarjetas del explorador, el consejo empuja hacia abajo sin
+   descolocar el título ni el diagrama */
+.explorer-card .fingering-diagram {
+  flex: 1;
+  justify-content: flex-start;
+}
+
+.diagram-note-name {
+  font-weight: 700;
+}
+
+.diagram-hint {
+  font-size: 0.75rem;
+  color: var(--muted);
+  max-width: 160px;
+  text-align: center;
+}
+
+.explorer-card .diagram-hint {
+  max-width: 100%;
+  overflow-wrap: break-word;
+}
+
+.diagram-unverified {
+  font-size: 0.7rem;
+  color: #b08000;
+}
+
+.diagram-missing {
+  color: var(--active);
+  font-size: 0.85rem;
+}
+
+/* ---------- explorador ---------- */
+.explorer h2 {
+  margin-bottom: 0.2rem;
+}
+
+.explorer-tip {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 0;
+}
+
+.explorer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.8rem;
+}
+
+/* traversa: menos tarjetas por fila, más amplias (el diagrama tiene más elementos) */
+.explorer-grid--wide {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+}
+
+.explorer-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* el contenido arranca arriba: los títulos quedan alineados aunque
+     algunas tarjetas tengan consejo debajo y otras no */
+  justify-content: flex-start;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.7rem 0.4rem;
+  transition: border-color 0.15s;
+}
+
+.explorer-card:hover {
+  border-color: var(--accent);
+}
+
+/* mini-pentagrama (abcjs): reserva vertical suficiente para las notas con
+   líneas adicionales por arriba (anclado abajo, crece hacia arriba sin tapar
+   el título) y separado del diagrama de dedos para que no se confundan */
+.ministaff {
+  height: 84px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.diagram-note-name {
+  margin-bottom: 2px;
+}
+
+.fingering-diagram .ministaff {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+}
+
+/* franja "Notas de esta canción" */
+.song-notes-strip {
+  margin: 0.8rem 0 0.4rem;
+}
+
+.song-notes-strip h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.song-notes-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.song-note-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem 0.3rem;
+}
+
+/* curso */
+.course {
+  max-width: 640px;
+}
+
+.lesson {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.4rem;
+  margin-bottom: 1.2rem;
+}
+
+.lesson h3 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.lesson-note {
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-size: 0.88rem;
+}
+
+.abc-snippet {
+  margin: 0.6rem 0;
+}
+
+.figures-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.figure-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.figure-name {
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.figure-name span {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* esquema anatómico central */
+.anatomy-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.4rem 1.2rem;
+  margin: 0 auto 1.6rem;
+  max-width: 460px;
+}
+
+.anatomy-card h3 {
+  margin: 0;
+}
+
+.anat-label {
+  font-size: 4.6px;
+  fill: var(--ink);
+}
+
+.anat-hand-label {
+  font-size: 5px;
+  font-weight: 700;
+  fill: var(--accent);
+  letter-spacing: 0.4px;
+}
+
+.anat-bracket {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1;
+}
+
+.alt-badge {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.05rem 0.4rem;
+  margin-bottom: 0.2rem;
+}
