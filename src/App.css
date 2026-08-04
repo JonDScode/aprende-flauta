@@ -616,18 +616,16 @@ svg g.note-active .tab-thumb-ring {
 
 .embouchure-body {
   display: flex;
-  gap: 1.2rem;
-  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.8rem;
 }
 
 .embouchure-image {
-  width: 34%;
-  max-width: 210px;
-  flex-shrink: 0;
+  width: 100%;
+  max-width: 520px;
+  align-self: center;
   border-radius: 10px;
   border: 1px solid var(--border);
-  /* la ilustración es una imagen alta (vista + corte técnico apilados) */
-  align-self: flex-start;
 }
 
 .embouchure-text p {
@@ -638,18 +636,6 @@ svg g.note-active .tab-thumb-ring {
 
 .embouchure-text p:last-child {
   margin-bottom: 0;
-}
-
-@media (max-width: 560px) {
-  .embouchure-body {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .embouchure-image {
-    width: 60%;
-    max-width: 260px;
-  }
 }
 
 
