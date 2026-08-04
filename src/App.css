@@ -630,68 +630,26 @@ svg g.note-active .tab-thumb-ring {
   padding: 0.5rem 0.7rem;
 }
 
-.emb-tube-outer {
+.emb-tube-group {
   fill: none;
   stroke: var(--ink);
-  stroke-width: 1.6;
+  stroke-width: 2;
 }
 
-.emb-tube-inner {
-  fill: none;
+.emb-tube-cap {
+  fill: var(--accent-soft);
+}
+
+.emb-face {
+  fill: var(--accent-soft);
   stroke: var(--ink);
-  stroke-width: 1;
-  opacity: 0.5;
+  stroke-width: 2.4;
+  stroke-linejoin: round;
 }
 
-.emb-riser {
-  fill: var(--card);
-  stroke: var(--ink);
-  stroke-width: 1.4;
-}
-
-.emb-lipplate {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.6;
-  stroke-linecap: round;
-}
-
-.emb-air-wedge {
-  fill: var(--accent);
-  opacity: 0.28;
-}
-
-.emb-air-hatch {
-  stroke: var(--accent);
-  stroke-width: 0.8;
-  opacity: 0.6;
-}
-
-.emb-air-split {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.6;
-}
-
-.emb-wave {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 1.2;
-  opacity: 0.6;
-}
-
-.emb-arrowhead {
-  fill: var(--accent);
-}
-
-.emb-badge {
-  fill: var(--accent);
-}
-
-.emb-badge-text {
-  font-size: 8px;
-  font-weight: 700;
-  fill: #fff;
+.emb-caption {
+  font-size: 9px;
+  fill: var(--muted);
 }
 
 .emb-face-outline {
