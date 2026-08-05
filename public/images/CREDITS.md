@@ -12,6 +12,8 @@ esta app. No se requiere atribución, pero se documenta la fuente por transparen
   Japan Maritime Self-Defense Force Band en Yokosuka · Obra oficial del gobierno de
   EE. UU., dominio público · [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:US_Navy_111203-N-CZ945-067_Sailor_plays_flute_alongside_musicians_of_the_Japan_Maritime_Self-Defense_Force_Band_Yokosuka.jpg)
 
-- **embouchure.jpg** — ilustración generada con IA por el operador del proyecto
+- **embouchure.jpg** — ilustración generada con IA (Gemini) por el operador del proyecto
   específicamente para esta app (sin derechos de autor de terceros), usada para fife y
-  traversa por igual (comparten el mismo mecanismo de bisel).
+  traversa por igual (comparten el mismo mecanismo de bisel). Anatomía verificada contra
+  referencias reales de acústica de flauta (posición del bisel, proporción de la chimenea,
+  cobertura del labio ~1/3, forma ovalada del orificio, dirección del aire).
